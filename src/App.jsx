@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import ListEmployeeComponent from "./components/ListEmployeeComponent";
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
+import AddEmployeeComponent from "./components/AddEmployeeComponent";
 
 const App = () => {
 	return (
@@ -23,7 +24,7 @@ const App = () => {
 						<Route
 							exact
 							path="/add-employee"
-							element={<ListEmployeeComponent />}
+							element={<AddEmployeeComponent />}
 						></Route>
 						<Route
 							exact
