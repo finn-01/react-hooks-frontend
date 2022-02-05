@@ -29,7 +29,7 @@ const App = () => {
 						<Route
 							exact
 							path="/edit-employee/:id"
-							element={<ListEmployeeComponent />}
+							element={<AddEmployeeComponent />}
 						></Route>
 					</Routes>
 				</div>
