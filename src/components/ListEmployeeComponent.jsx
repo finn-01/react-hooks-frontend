@@ -21,6 +21,16 @@ const ListEmployeeComponent = () => {
 		getAllEmployees();
 	}, []);
 
+	const deleteEmployee = (employeeId) => {
+		EmployeeService.deleteEmployee(employeeId)
+			.then((response) => {
+				getAllEmployees();
+			})
+			.catch((error) => {
+				console.log(error);
+			});
+	};
+
 	return (
 		<div className="container">
 			<h2 className="text-center">List Employees</h2>
@@ -52,6 +62,9 @@ const ListEmployeeComponent = () => {
 								<button
 									className="btn btn-danger"
 									style={{ marginLeft: "10px" }}
+									onClick={() => {
+										deleteEmployee(employee.id);
+									}}
 								>
 									Delete
 								</button>
