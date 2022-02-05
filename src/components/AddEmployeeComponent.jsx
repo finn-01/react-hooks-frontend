@@ -7,7 +7,7 @@ const AddEmployeeComponent = () => {
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [emailId, setEmailId] = useState("");
-	// const navigate = useNavigate()
+	const navigate = useNavigate();
 	// const {id} = useParams()
 
 	const saveEmployee = (e) => {
@@ -16,6 +16,16 @@ const AddEmployeeComponent = () => {
 		const employee = { firstName, lastName, emailId };
 
 		console.log(employee);
+
+		EmployeeService.createEmployee(employee)
+			.then((response) => {
+				console.log(response.data);
+
+				navigate("/employees");
+			})
+			.catch((error) => {
+				console.log(error);
+			});
 	};
 
 	return (
